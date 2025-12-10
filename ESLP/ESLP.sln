@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESLP", "ESLP.csproj", "{DC9C39BC-7F8D-4264-95F3-FD43C9EB585A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC9C39BC-7F8D-4264-95F3-FD43C9EB585A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC9C39BC-7F8D-4264-95F3-FD43C9EB585A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC9C39BC-7F8D-4264-95F3-FD43C9EB585A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC9C39BC-7F8D-4264-95F3-FD43C9EB585A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67F651A5-5387-4F17-A77E-5B0E8522D4E8}
+	EndGlobalSection
+EndGlobal
