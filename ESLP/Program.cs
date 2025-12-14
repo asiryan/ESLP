@@ -3,6 +3,9 @@ using System.Runtime.CompilerServices;
 
 namespace ESLP
 {
+    // ============================================================
+    //                          RUN
+    // ============================================================
     class Program
     {
         // ================= SETTINGS =================
@@ -35,18 +38,10 @@ namespace ESLP
 
         static void Main(string[] args)
         {
-            Console.Clear();
-
-            double n = SEARCH_LIMIT - START_FROM;
-            _estimatedTotalPairs = n * n / 2.0;
-
             PrintHeader();
-
             Precompute();
 
-            // ====== SEARCH ======
             var swSearch = Stopwatch.StartNew();
-
             var uiTask = Task.Run(() => UILoop(swSearch));
 
             int maxA = SEARCH_LIMIT - START_FROM + 1;
@@ -81,6 +76,9 @@ namespace ESLP
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("Phase 1: Precomputing powers & building inverted index... ");
             Console.ResetColor();
+
+            double n = SEARCH_LIMIT - START_FROM;
+            _estimatedTotalPairs = n * n / 2.0;
 
             var swTotal = Stopwatch.StartNew();
 
@@ -349,6 +347,7 @@ namespace ESLP
 
         static void PrintHeader()
         {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("See also:");
             Console.WriteLine("Valery Asiryan");

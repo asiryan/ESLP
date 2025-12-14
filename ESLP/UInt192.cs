@@ -8,7 +8,7 @@ namespace ESLP
     // CUSTOM ULTRA-FAST MATH STRUCT (192-bit)
     // Works on Stack, Zero GC Allocation, High Performance
     // =========================================================
-    public readonly struct UInt192 : IEquatable<UInt192>, IComparable<UInt192>
+    readonly struct UInt192 : IEquatable<UInt192>, IComparable<UInt192>
     {
         // Data fields (Low to High significance)
         public readonly ulong r0;
