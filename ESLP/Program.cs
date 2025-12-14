@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 namespace ESLP
 {
     // ============================================================
-    //                          RUN
+    //                          LAUNCHER
     // ============================================================
     class Program
     {
@@ -36,7 +36,7 @@ namespace ESLP
         //                       MAIN
         // ============================================================
 
-        static void Main(string[] args)
+        static void Main()
         {
             PrintHeader();
             Precompute();
@@ -117,18 +117,12 @@ namespace ESLP
             Console.ResetColor();
         }
 
-        sealed class WorkerState
+        [method: MethodImpl(MethodImplOptions.AggressiveInlining)]
+        sealed class WorkerState(int capacity)
         {
-            private readonly Node[] _heap;
-            private readonly int[] _pos; // monotone pointers
-            private int _size;
-
-            public WorkerState(int capacity)
-            {
-                _heap = new Node[capacity];
-                _pos = new int[PARTITIONS];
-                _size = 0;
-            }
+            private readonly Node[] _heap = new Node[capacity];
+            private readonly int[] _pos = new int[PARTITIONS]; // monotone pointers
+            private int _size = 0;
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             static bool Less(in UInt192 a, in UInt192 b)

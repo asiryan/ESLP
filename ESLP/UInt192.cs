@@ -3,7 +3,6 @@ using System.Runtime.CompilerServices;
 
 namespace ESLP
 {
-
     // =========================================================
     // CUSTOM ULTRA-FAST MATH STRUCT (192-bit)
     // Works on Stack, Zero GC Allocation, High Performance
@@ -20,8 +19,8 @@ namespace ESLP
         public UInt192(ulong v0, ulong v1, ulong v2) { r0 = v0; r1 = v1; r2 = v2; }
 
         // Implicit conversions
-        public static implicit operator UInt192(int v) => new UInt192((ulong)v);
-        public static implicit operator UInt192(ulong v) => new UInt192(v);
+        public static implicit operator UInt192(int v) => new((ulong)v);
+        public static implicit operator UInt192(ulong v) => new(v);
 
         // --- ARITHMETIC OPERATORS ---
 
@@ -138,7 +137,7 @@ namespace ESLP
             BitConverter.TryWriteBytes(new Span<byte>(bytes, 16, 8), r2);
 
             // Append 0 byte to ensure BigInteger treats it as unsigned
-            BigInteger bigInt = new BigInteger(bytes, isUnsigned: true, isBigEndian: false);
+            var bigInt = new BigInteger(bytes, isUnsigned: true, isBigEndian: false);
 
             return bigInt.ToString();
         }
